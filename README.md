@@ -1,7 +1,7 @@
 # Art4All
 README for CS 5200 project for Anagha Kadoo and Srinidhi Sunkara.
-##### Anagha Kadoo NUID:002754436
-##### Srinidhi Sunkara NUID: 002752893 
+##### Anagha Kadoo
+##### Srinidhi Sunkara
 ##### Group Name : SunkaraSKadooA
 
 ### Tech Stack to be installed
@@ -9,8 +9,6 @@ README for CS 5200 project for Anagha Kadoo and Srinidhi Sunkara.
 
   * Follow steps to download Node.js - 
   https://nodejs.org/en/download/
-  * Follow steps given in this link to download the node version manager - 
-  https://dev.to/skaytech/how-to-install-node-version-manager-nvm-for-windows-10-4nbi
 
   * Once the node version manager is installed
   execute the command "nvm use 19.2.0"
@@ -62,7 +60,7 @@ README for CS 5200 project for Anagha Kadoo and Srinidhi Sunkara.
 * #### Steps to run the application - 
   * Create `cookie_user` database as mentioned above in `To create cookie_user database`.
   * Create `art` database using the `tableCreationDataDump.sql` file.
-  * Populate the database by running all sql scripts in the  `../art4all/tableCreationData folder` in the following order - 
+  * Populate the database by running all sql scripts in the  `../art4all/Data folder` in the following order - 
    * `art_location.sql`
    * `art_artistlogin.sql`
    * `art_museum.sql`
