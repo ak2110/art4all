@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Art4All</title>
+    <script src="https://kit.fontawesome.com/7cddce98d5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="usermain.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;900&family=Ubuntu&display=swap" rel="stylesheet">
+  </head>
+  <body class="background">
+    <h1 style="color:black;"> Art4All</h1>
+    <div class="topnav">
+        <a class="active" href="/adminmain">Home</a>
+        <a href="/adminupdatemuseum">Update Gallery/Museum </a>
+        <a href="/admindeleteartwork">Remove Art Work</a>
+        <a href="/adminstats">Statistics</a>
+        <a href="/logout">Logout</a>  
+      </div>
+      <br/>
+
+      <div class="row">
+        <% data.forEach((artobj)=>{%>
+        <div class="column">
+          <div class="card">
+            <br/>
+              <a href="#"><img src="<%=artobj.imageURL %>" style="width:60%;"></a>
+              <br/>
+              <p class="title"><u><%= artobj.title %></u></p>
+              <div class="art-text">
+              <p>Artist : <%= artobj.artistName %></p>
+              <p>Museum : <%= artobj.museumName %></p>
+              <p> Creation Date : <%= artobj.objectdate %></p>
+              <p>Art Work Style : <%= artobj.century %>th century</p>
+              <p>Medium Used : <%= artobj.materialUsed %></p>
+              <p>Cred Line :  <%= artobj.description %></p>
+              <p>Artwork Dimension : <%= artobj.obj_dimension %></p>
+              </div>
+            </div>
+            </div>
+          <%});%>
+        </div>
+      </body>
+</html>

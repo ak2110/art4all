@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Art4All</title>
+    <script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js" type="text/javascript"></script>
+    <script src="https://kit.fontawesome.com/7cddce98d5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="adminstats.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;900&family=Ubuntu&display=swap" rel="stylesheet">
+  </head>
+  <body class="background">
+
+    <h1 style="color:black;"> Art4All</h1>
+    <div class="topnav">
+        <a href="/adminmain">Home</a>
+        <a href="/adminupdatemuseum">Update Gallery/Museum</a>
+        <a href="/admindeleteartwork">Remove Art Work</a>
+        <a class="active" href="/adminstats">Statistics</a>
+        <a href="/logout">Logout</a>  
+      </div>
+      <br/>
+
+<div class="row">
+    <div class="column">
+        <div class="card">
+          <p><i class="fa fa-palette"></i></p>
+          <h3><%= data.TotalArt %></h3>
+          <p>Art Works</p>
+        </div>
+      </div>
+
+    <div class="column">
+      <div class="card">
+        <p><i class="fa fa-user"></i></p>
+        <h3><%= data.TotalArtist %></h3>
+        <p>Artists</p>
+      </div>
+    </div>
+  
+    <div class="column">
+      <div class="card">
+        <p><i class="fa fa-landmark"></i></p>
+        <h3><%= data.TotalMuseum %></h3>
+        <p>Galleries / Museums</p>
+      </div>
+    </div>
+  
+    <div class="column">
+      <div class="card">
+        <p><i class="fa fa-spray-can"></i></p>
+        <h3><%= data.TotalMedium %></h3>
+        <p>Art Mediums</p>
+      </div>
+    </div>
+  </div>
+  <br/>
+
+    <div class="parent">
+    <table class="child">
+        <tr>
+          <th>Artist</th>
+          <th>Total Artwork</th>
+        </tr>
+        <% data.artistData.forEach(artist=>{%>
+        <tr>
+          <td><%= artist.Artist %></td>
+          <td><%= artist.TotalArt %></td>
+        </tr>
+        <%});%>
+      </table>
+
+      <table class="child">
+        <tr>
+          <th>Museum</th>
+          <th>Total Artwork</th>
+        </tr>
+        <% data.museumData.forEach(museum=>{%>
+        <tr>
+          <td><%= museum.Museum %></td>
+          <td><%= museum.TotalArtWorks %></td>
+        </tr>
+        <%});%>
+      </table>
+      </div>
+
+      <div class="parent">
+        <table class="child">
+            <tr>
+              <th>Medium</th>
+              <th>Total Artwork</th>
+            </tr>
+            <% data.mediumData.forEach(medium=>{%>
+            <tr>
+              <td><%= medium.Medium %></td>
+              <td><%= medium.TotalArtWorks %></td>
+            </tr>
+            <%});%>
+          </table>
+    
+          <table class="child">
+            <tr>
+              <th>Style - Century</th>
+              <th>Total Artwork</th>
+            </tr>
+            <% data.styledata.forEach(century=>{%>
+            <tr>
+              <td><%= century.Century %></td>
+              <td><%= century.TotalArtWorks %></td>
+            </tr>
+            <%});%>
+          </table>
+          </div>
+  <!-- <div id="museum-container"></div>
+
+  <script type='text/javascript'>
+
+    var dataSource = [];
+    
+    data.artistData.forEach(artist=>{
+        artistData = {};
+        artistData.x = artist.Artist;
+        artistData.y = parseInt(artist.TotalArt);
+        dataSource.push(artistData);
+    });
+
+    console.log(dataSource);
+
+    var pie = new ej.charts.AccumulationChart({
+        //Initializing Series
+        series: [
+            {
+                dataSource: [
+                        { 'x': 'Chrome', y: 37 }, { 'x': 'UC Browser', y: 17 },
+                        { 'x': 'iPhone', y: 19 },
+                        { 'x': 'Others', y: 4 }, { 'x': 'Opera', y: 11 },
+                        { 'x': 'Android', y: 12 }
+                    ],
+                dataLabel: {
+                    visible: true,
+                    position: 'Inside',
+                },
+                xName: 'x',
+                yName: 'y'
+            }
+        ],
+    });
+    pie.appendTo('#museum-container');
+</script> -->
+
+  </body>
+  </html>
